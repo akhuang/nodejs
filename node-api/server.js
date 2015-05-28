@@ -80,6 +80,24 @@ apiRouter.post('/authenticate',function(req,res){
 apiRouter.use(function(req,res,next){
     console.log("somebody just came to our app.");
 
+    var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+
+    if(token){
+        jwt.verify(token,superSecret,function(err,decoded){
+            if(err){
+                return res.status(403).send({
+                    success:false,
+                    message:'Failed to authenticate token.'
+                });
+            }
+            else {
+                req.decoded = token;
+
+                next();
+            }
+        });
+    }
+
     next();
 });
 // accessed at /api
@@ -157,6 +175,10 @@ apiRouter.route("/users/:user_id")
             res.json({message:"Successfully deleted."});
         });
     });
+
+apiRouter.get('/me',function(req,res){
+    res.send(req.decoded);
+});
 
 // register routes
 // all of our routes will be prefixed with /api
