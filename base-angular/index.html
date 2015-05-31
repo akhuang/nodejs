@@ -15,5 +15,20 @@
                 more unique by building on or modifying it.
             </p>
       </div>
+      <table class="table">
+          <tr>
+            <th>name</th>
+            <th>color</th>
+          </tr>
+          <tr ng-repeat="computer in main.computers">
+              <td>{{computer.name}}</td>
+              <td>{{computer.color}}</td>
+          </tr>
+      </table>
+      <form ng-submit="main.addComputer()">
+          <input type='text' ng-model='main.computerData.name' />
+          <input type='text' ng-model='main.computerData.color' />
+          <button type='submit'>submit</button>
+      </form>
     </body>
 </html>
