@@ -1,0 +1,17 @@
+{
+  "name": "user-crm",
+  "version": "0.0.1",
+  "description": "user crm",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-animate": "~1.4.0"
+  }
+}

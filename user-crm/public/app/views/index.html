@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My first angular application.</title>
+    <link rel=" stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="assets/libs/angular/angular.min.js"></script>
+    <script src="app/services/userService.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+</head>
+<body class='container' ng-app="myApp" ng-controller="mainController as main">
+    <table class="table">
+        <tr>
+            <th>name</th>
+        </tr>
+        <tr ng-repeat="user in main.users">
+            <td>{{user.name}}</td>
+        </tr>
+    </table>
+
+</body>
+</html>
