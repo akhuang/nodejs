@@ -20,7 +20,7 @@
     <Content Include="bower.json" />
     <Content Include="package.json" />
     <Compile Include="config.js" />
-    <Compile Include="public\app\controllers\minCtrl.js" />
+    <Compile Include="public\app\controllers\mainCtrl.js" />
     <Compile Include="public\app\services\userService.js" />
     <Compile Include="server.js" />
     <Compile Include="app\models\user.js" />
